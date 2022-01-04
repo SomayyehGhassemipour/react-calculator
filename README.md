@@ -2,4 +2,4 @@
 
 A calculator with React library
 
-Authors: Somi and Anna
+Authors: Somi and Ania
