@@ -1,0 +1,10 @@
+.ButtonBox {
+	width: 100%;
+	height: calc(100% - 150px);
+	background-color: #000807;
+	border-radius: 0 0 10px 10px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 1px;
+}
