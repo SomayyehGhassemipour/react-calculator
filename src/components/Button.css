@@ -1,0 +1,40 @@
+button {
+	border: none;
+	font-size: 24px;
+	font-family: 'Dosis';
+	color: rgba(240, 248, 255, 0.945);
+	background-color: #000807;
+	outline: none;
+}
+button:hover {
+	background-color: rgba(0, 238, 255, 0.247);
+}
+
+/* Operations buttons */
+.btn0,
+.btn1,
+.btn2 {
+	background-color: rgba(4, 57, 61, 0.274);
+}
+.btn3,
+.btn7,
+.btn11,
+.btn15,
+.btn18 {
+	background-color: rgba(4, 57, 61, 0.479);
+}
+
+/* border button */
+.btn16 {
+	border-radius: 0 0 0 10px;
+}
+
+/* equals button = */
+.btn18 {
+	background-color: rgba(3, 129, 138, 0.74);
+	border-radius: 0 0 10px 0;
+	grid-column: 3/5;
+}
+.btn18:hover {
+	background-color: rgba(3, 162, 173, 0.74);
+}
