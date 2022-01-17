@@ -52,7 +52,7 @@ function App() {
     
   }
 
-  const addSubClickHandler = (e) => {
+  const operationClickHandler = (e) => {
     let value = e.target.innerHTML;
     value = value ==="x"? "*":value;
     setCalc({
@@ -94,11 +94,11 @@ function App() {
                   ? resetClickHandler
                   : btn === "." 
                   ? commaClickHandler
-                  : btn === "+" || btn === "-" 
-                  ? addSubClickHandler
+                  : btn === "+" || btn === "-" ||  btn === "x"
+                  ? operationClickHandler
                   : btn === "="
                   ? equalClickHandler
-                  : (btn !=="+ -" && btn !== "%" && btn !== "=" && btn !== "x" && btn !== "/")
+                  : (btn !=="+ -" && btn !== "%" && btn !== "=" && btn !== "/")
                   ? numbersClickHandler
                   : console.log("sign buttons Clicked!")
                 }
