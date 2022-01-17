@@ -52,19 +52,23 @@ function App() {
     
   }
 
-  const additonClickHandler = () => {
+  const addSubClickHandler = (e) => {
+    let value = e.target.innerHTML;
+    value = value ==="x"? "*":value;
     setCalc({
       ...calc,
-      sign : "+",
-      result: Number(calc.result) + Number(calc.number),
-      number: "0"
+      result: calc.result && Number(calc.number)!==0
+      ? eval(calc.result + calc.sign+ calc.number) 
+      : calc.sign? calc.result : calc.number,
+      number: "0",
+      sign : value 
     });
   }
 
   const equalClickHandler = () => {
     setCalc({
       ...calc,
-      result : Number(calc.result) + Number(calc.number),
+      result: calc.result ? eval(calc.result + calc.sign+ calc.number) : calc.number,
       number: "0",
       sign: ""
     })
@@ -90,11 +94,11 @@ function App() {
                   ? resetClickHandler
                   : btn === "." 
                   ? commaClickHandler
-                  : btn === "+"
-                  ? additonClickHandler
+                  : btn === "+" || btn === "-" 
+                  ? addSubClickHandler
                   : btn === "="
                   ? equalClickHandler
-                  : (btn !=="+ -" && btn !== "%" &&  btn !== "-"&& btn !== "x"&& btn !== "/"&& btn !== "=")
+                  : (btn !=="+ -" && btn !== "%" && btn !== "=" && btn !== "x" && btn !== "/")
                   ? numbersClickHandler
                   : console.log("sign buttons Clicked!")
                 }
